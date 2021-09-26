@@ -276,7 +276,7 @@ void OLED::printNumF(double num, byte dec, int x, int y, char divider, int lengt
 
 	if (divider != '.')
 	{
-		for (int i=0; i<sizeof(st); i++)
+		for (uint16_t i=0; i<sizeof(st); i++)
 			if (st[i]=='.')
 				st[i]=divider;
 	}
@@ -286,7 +286,7 @@ void OLED::printNumF(double num, byte dec, int x, int y, char divider, int lengt
 		if (neg)
 		{
 			st[0]='-';
-			for (int i=1; i<sizeof(st); i++)
+			for (uint16_t i=1; i<sizeof(st); i++)
 				if ((st[i]==' ') || (st[i]=='-'))
 					st[i]=filler;
 		}
@@ -399,7 +399,7 @@ void OLED::clrHLine(int x, int y, int l)
 
 void OLED::drawVLine(int x, int y, int l)
 {
-	int by, bi;
+//	int by, bi;
 
 	if ((x>=0) and (x<128) and (y>=0) and (y<64))
 	{
@@ -412,7 +412,7 @@ void OLED::drawVLine(int x, int y, int l)
 
 void OLED::clrVLine(int x, int y, int l)
 {
-	int by, bi;
+//	int by, bi;
 
 	if ((x>=0) and (x<128) and (y>=0) and (y<64))
 	{
@@ -427,7 +427,7 @@ void OLED::drawLine(int x1, int y1, int x2, int y2)
 {
 	int tmp;
 	double delta, tx, ty;
-	double m, b, dx, dy;
+//	double b, dx, dy; //m
 	
 	if (((x2-x1)<0))
 	{
@@ -517,7 +517,7 @@ void OLED::clrLine(int x1, int y1, int x2, int y2)
 {
 	int tmp;
 	double delta, tx, ty;
-	double m, b, dx, dy;
+//	double m, b, dx, dy;
 	
 	if (((x2-x1)<0))
 	{
@@ -714,7 +714,7 @@ void OLED::drawCircle(int x, int y, int radius)
 	int ddF_y = -2 * radius;
 	int x1 = 0;
 	int y1 = radius;
-	char ch, cl;
+//	char ch, cl;
 	
 	setPixel(x, y + radius);
 	setPixel(x, y - radius);
@@ -750,7 +750,7 @@ void OLED::clrCircle(int x, int y, int radius)
 	int ddF_y = -2 * radius;
 	int x1 = 0;
 	int y1 = radius;
-	char ch, cl;
+//	char ch, cl;
 	
 	clrPixel(x, y + radius);
 	clrPixel(x, y - radius);

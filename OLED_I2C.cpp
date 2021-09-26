@@ -158,7 +158,7 @@ void OLED::invPixel(uint16_t x, uint16_t y)
 {
 	int by, bi;
 
-	if ((x>=0) and (x<128) and (y>=0) and (y<64))
+	if ((x<128) and (y<64))
 	{
 		by=((y/8)*128)+x;
 		bi=y % 8;

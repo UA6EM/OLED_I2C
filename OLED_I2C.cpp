@@ -180,7 +180,7 @@ void OLED::invertText(bool mode)
 
 void OLED::print(char *st, int x, int y)
 {
-	unsigned char ch;
+//	unsigned char ch;
 	int stl;
 
 	stl = strlen(st);
@@ -292,7 +292,7 @@ void OLED::printNumF(double num, byte dec, int x, int y, char divider, int lengt
 		}
 		else
 		{
-			for (int i=0; i<sizeof(st); i++)
+			for (uint16_t i=0; i<sizeof(st); i++)
 				if (st[i]==' ')
 					st[i]=filler;
 		}
